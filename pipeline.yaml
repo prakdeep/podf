@@ -7,7 +7,7 @@ variables:
   ARM_SUBSCRIPTION_ID: '79bdf282-66fa-4bdc-b5dc-5f029b9647de'
   ARM_TENANT_ID: 'df65ce47-b9d7-4489-9610-3ea8b8385565'
   ARM_CLIENT_SECRET: 'Svl8Q~gcnPA-4X6FHqjiWVmJkcqwz78zykXPKcLl'
-  workingDirectory: '$(System.DefaultWorkingDirectory)/modules/rg'
+  workingDirectory: '$(System.DefaultWorkingDirectory)/'
 
 stages:
 - stage:  Initiliaze 
