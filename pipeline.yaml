@@ -20,7 +20,7 @@ stages:
       name: k8s-selfhosted-agents
     steps:
 
-    - chekout: self
+    - checkout: self
 
     - task: TerraformInstaller@1
       displayName: Install terraform
