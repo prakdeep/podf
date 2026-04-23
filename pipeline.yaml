@@ -34,7 +34,7 @@ stages:
       workingDirectory: $(workingDirectory)
       displayName: 
    
-    - script: Terraform plan
+    - script: terraform plan
       workingDirectory: $(workingDirectory)
       displayName: Terraform Plan 
       env:
