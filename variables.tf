@@ -11,13 +11,6 @@ variable "rg" {
 
 }
 
-variable "invalid" {
-
-}
-
-variable "count" {
-
-}
 
 variable "nicv" {
 
