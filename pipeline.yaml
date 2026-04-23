@@ -32,12 +32,12 @@ stages:
 
     - script: terraform Init
       workingDirectory: $(workingDirectory)
-      dispayName: 
+      displayName: 
    
     - script: Terraform plan
       workingDirectory: $(workingDirectory)
       displayName: Terraform Plan 
-      inputs:
+      env:
         ARM_CLIENT_ID: '973195d4-9965-4184-b8ec-0deb89d4d67e'
         ARM_SUBSCRIPTION_ID: '79bdf282-66fa-4bdc-b5dc-5f029b9647de'
         ARM_TENANT_ID: 'df65ce47-b9d7-4489-9610-3ea8b8385565'
