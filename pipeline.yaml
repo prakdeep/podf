@@ -1,5 +1,5 @@
 trigger: none
-branch: none
+pr: none
 
 variables:
   terraformVersion: '1.14.8'
@@ -25,7 +25,27 @@ stages:
     - task: TerraformInstaller@1
       displayName: Install terraform
       inputs:
-        terraformVersion: $(terraformVersion)    
+        terraformVersion: $(terraformVersion)   
+
+    - script: terraform version 
+      displayName: Verify Terraform version
+
+    - script: terraform Init
+      workingDirectory: $(workingDirectory)
+      dispayName: 
+   
+    - script: Terraform plan
+      workingDirectory: $(workingDirectory)
+      displayName: Terraform Plan 
+      inputs:
+        ARM_CLIENT_ID: '973195d4-9965-4184-b8ec-0deb89d4d67e'
+        ARM_SUBSCRIPTION_ID: '79bdf282-66fa-4bdc-b5dc-5f029b9647de'
+        ARM_TENANT_ID: 'df65ce47-b9d7-4489-9610-3ea8b8385565'
+        ARM_CLIENT_SECRET: 'Svl8Q~gcnPA-4X6FHqjiWVmJkcqwz78zykXPKcLl'
+          
+    - publish: $(workingDirectory)
+      artifact: TerraformPlan
+      displayName: publishing Terraform plan
 
 
 
