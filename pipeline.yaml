@@ -30,7 +30,7 @@ stages:
     - script: terraform version 
       displayName: Verify Terraform version
 
-    - script: terraform Init
+    - script: terraform init
       workingDirectory: $(workingDirectory)
       displayName: 
    
