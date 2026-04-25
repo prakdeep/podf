@@ -47,7 +47,7 @@ stages:
       artifact: TerraformPlan
       displayName: publishing Terraform plan
 
-  stage: Approval
+- stage: Approval
   displayName: Approval stage
   dependsOn: Initiliaze
 
@@ -65,7 +65,7 @@ stages:
           Terraform plan completed
           please review the output and approve the piplein
         onTimeOut: reject
-        
+
 
 
       
