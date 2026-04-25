@@ -34,11 +34,7 @@ stages:
       workingDirectory: $(workingDirectory)
       displayName: terraform init
    
-    - script: terraform plan \
-                -var="subscription_id=$(ARM_SUBSCRIPTION_ID)" \
-                -var="client_id=$(ARM_CLIENT_ID)" \
-                -var="client_secret=$(ARM_CLIENT_SECRET)" \
-                -var="tenant_id=$(ARM_TENANT_ID)"
+    - script: terraform plan -var="subscription_id=79bdf282-66fa-4bdc-b5dc-5f029b9647de" -var="client_id=973195d4-9965-4184-b8ec-0deb89d4d67e" -var="client_secret=***" -var="tenant_id=df65ce47-b9d7-4489-9610-3ea8b8385565"
       workingDirectory: $(workingDirectory)
       displayName: Terraform Plan 
        
