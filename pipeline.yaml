@@ -56,7 +56,7 @@ stages:
   - job: ManualApproval
     displayName: Manual Approval
     pool:
-      name: k8s-selfhosted-agents
+      name: server
     steps:
     - task: ManualValidation@0
       timeoutInMinutes: 1440
