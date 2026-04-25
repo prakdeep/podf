@@ -14,19 +14,28 @@ variable "rg" {
 
 variable "subscription_id" {
   type = string
+
+  default = "79bdf282-66fa-4bdc-b5dc-5f029b9647de"
 }
 
+
 variable "client_id" {
+  
   type = string
+
+  default = "973195d4-9965-4184-b8ec-0deb89d4d67e"
 }
 
 variable "client_secret" {
+
+  default = "Svl8Q~gcnPA-4X6FHqjiWVmJkcqwz78zykXPKcLl"
   type      = string
   sensitive = true
 }
 
 variable "tenant_id" {
   type = string
+  default = "df65ce47-b9d7-4489-9610-3ea8b8385565"
 }
 
 variable "nicv" {
