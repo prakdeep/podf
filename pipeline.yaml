@@ -47,6 +47,29 @@ stages:
       artifact: TerraformPlan
       displayName: publishing Terraform plan
 
+  stage: Approval
+  displayName: Approval stage
+  dependsOn: Initiliaze
+
+  jobs:
+
+  - job: ManualApproval
+    displayName: Manual Approval
+    pool:
+      name: k8s-selfhosted-agents
+    steps:
+      task: ManualValidation@@
+      timeoutInMinutes: 1440
+      inputs:
+        instructions: |
+          Terraform plan completed
+          please review the output and approve the piplein
+        onTimeOut: reject
+        
+
+
+      
+
 
 
 
