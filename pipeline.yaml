@@ -58,7 +58,7 @@ stages:
     pool:
       name: k8s-selfhosted-agents
     steps:
-      task: ManualValidation@0
+    - task: ManualValidation@0
       timeoutInMinutes: 1440
       inputs:
         instructions: |
