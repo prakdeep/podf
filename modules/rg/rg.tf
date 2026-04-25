@@ -1,8 +1,8 @@
 resource "azurerm_resource_group" "testrg" {
 
-  count    = length(local.rg_og) > 0 ? 4 : 0
-  name     = local.rg_og[count.index].rg_name
-  location = local.rg_og[count.index].location
+  
+  name     = var.rg[0].rg_name
+  location = var.rg[0].location
 
 
 }
