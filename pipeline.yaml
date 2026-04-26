@@ -66,6 +66,19 @@ stages:
           please review the output and approve the piplein
         onTimeOut: reject
 
+  - stage: Apply
+    displayName: Terraform approval
+    dependsOn: approval
+
+    jobs:
+
+    - job: Terraform Apply
+      displayName: terraform Apply
+      steps:
+        script: terraform Apply
+        displayName: terraform Apply
+        workingDirectory: $(workingDirectory)
+
 
 
       
