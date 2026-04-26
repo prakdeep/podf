@@ -75,6 +75,7 @@ stages:
 
   - job: TerraformApply
     displayName: terraform Apply
+    pool: k8s-selfhosted-agents
     steps:
     - checkout: self  
     - download: current
