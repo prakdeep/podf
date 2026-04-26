@@ -73,7 +73,7 @@ stages:
 
   jobs:
 
-    - job: Terraform Apply
+    - job: TerraformApply
       displayName: terraform Apply
       steps:
       - checkout: self  
