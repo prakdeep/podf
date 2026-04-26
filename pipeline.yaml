@@ -75,10 +75,14 @@ stages:
     - job: Terraform Apply
       displayName: terraform Apply
       steps:
-        script: terraform Apply
+        download: current
+        artifact: TerraformPlan
+        displayName: Download Terraform plan artifact
+
+        script: terraform Apply -auto-approve
         displayName: terraform Apply
         workingDirectory: $(workingDirectory)
-
+        
 
 
       
