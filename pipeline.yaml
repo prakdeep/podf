@@ -70,16 +70,18 @@ stages:
   displayName: Terraform approval
   dependsOn: approval
 
+
   jobs:
 
     - job: Terraform Apply
       displayName: terraform Apply
       steps:
-        download: current
+      - checkout: self  
+      - download: current
         artifact: TerraformPlan
         displayName: Download Terraform plan artifact
 
-        script: terraform Apply -auto-approve
+      - script: terraform Apply -auto-approve
         displayName: terraform Apply
         workingDirectory: $(workingDirectory)
         
