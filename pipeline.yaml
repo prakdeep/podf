@@ -67,23 +67,23 @@ stages:
         onTimeOut: reject
 
 - stage: Apply
-  displayName: Terraform approval
+  displayName: Terraform Apply
   dependsOn: approval
 
 
   jobs:
 
-    - job: TerraformApply
-      displayName: terraform Apply
-      steps:
-      - checkout: self  
-      - download: current
-        artifact: TerraformPlan
-        displayName: Download Terraform plan artifact
+  - job: TerraformApply
+    displayName: terraform Apply
+    steps:
+    - checkout: self  
+    - download: current
+      artifact: TerraformPlan
+      displayName: Download Terraform plan artifact
 
-      - script: terraform Apply -auto-approve
-        displayName: terraform Apply
-        workingDirectory: $(workingDirectory)
+    - script: terraform apply -auto-approve
+      displayName: terraform Apply
+      workingDirectory: $(workingDirectory)
         
 
 
