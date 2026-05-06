@@ -84,10 +84,10 @@ stages:
       artifact: TerraformPlan
       displayName: Download Terraform plan artifact
 
-    - script: TerraformInit
+    - script: terraform init
       displayName: Terraform Init
       workingDirectory: $(workingDirectory)
-      
+
 
     - script: terraform apply -auto-approve
       displayName: terraform Apply
